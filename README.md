@@ -7,7 +7,7 @@ A (very) simple library for persisting Go objects to MySQL with as little boiler
 PACKAGE DOCUMENTATION
 
 package mantra
-    import "."
+    import "github.com/octoberxp/mantra"
 
     Mantra is a simple ORM framework designed to work with MySQL.
 
@@ -15,17 +15,20 @@ package mantra
 TYPES
 
 type ModelSQL struct {
+
     TableName, PrimaryKeyField string
 
     Create, Retrieve, Update, Delete string
 
     DatabaseToStructMapping, StructToDatabaseMapping map[string]string
 }
+
     ModelSQL is a type that holds basic SQL statements and related data for
     a single type.
 
 
 func ModelSQLForObject(object interface{}, tableName string) (sqlObject ModelSQL, err error)
+
     ModelSQLForObject will use reflection to generate a ModelSQL struct
     based on the given data type. By default, the generated SQL will use all
     struct fields as table names, converted into underscore_case.
