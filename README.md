@@ -24,7 +24,7 @@ TYPES
 ModelSQL is a type that holds basic SQL statements and related data for a single type.
 
 
-     func ModelSQLForObject(object interface{}, tableName string) (sqlObject ModelSQL, err error)
+    func ModelSQLForObject(object interface{}, tableName string) (sqlObject ModelSQL, err error)
 
 ModelSQLForObject will use reflection to generate a ModelSQL struct
 based on the given data type. By default, the generated SQL will use all
