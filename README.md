@@ -13,16 +13,15 @@ Mantra is a simple ORM framework designed to work with MySQL.
 
 TYPES
 
-  type ModelSQL struct {
-    TableName, PrimaryKeyField string
+    type ModelSQL struct {
+        TableName, PrimaryKeyField string
 
-    Create, Retrieve, Update, Delete string
+        Create, Retrieve, Update, Delete string
 
-    DatabaseToStructMapping, StructToDatabaseMapping map[string]string
-  }
+        DatabaseToStructMapping, StructToDatabaseMapping map[string]string
+    }
 
-    ModelSQL is a type that holds basic SQL statements and related data for
-    a single type.
+ModelSQL is a type that holds basic SQL statements and related data for a single type.
 
 
   func ModelSQLForObject(object interface{}, tableName string) (sqlObject ModelSQL, err error)
